@@ -17,5 +17,6 @@ public class EnvProperties {
     private String port;
     private String url;
     private String env;
+    private String urlApi;
 
 }

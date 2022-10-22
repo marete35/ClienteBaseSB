@@ -54,14 +54,13 @@ Se tienen dos opciones:
 
 - Opción 1: Java System Properties (VM Arguments)
 Es importante que el parámetro -D antes de su aplicación de otra manera no sera reconocido. 
-- 
 
     **java -jar -Dspring.profiles.active=prod application.jar**
 
 - Opción 2: Program arguments
 
     **java -jar application.jar --spring.profiles.active=prod --spring.config.location=c:\config**
-- 
+
 La segunda opción es la que utilizo en el intellij. De esta manera tengo dos configuraciones para 
 hacer correr la aplicación. Una configuración para el profile de desarrollo y otra para el de producción. 
 
