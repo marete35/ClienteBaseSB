@@ -1,6 +1,8 @@
-# Tecnologias
+# Proyecto Cliente Base
 
-Proyecto base para cliente realizado en spring boot utilizando el motor de plantilla de thymeleaf. 
+Proyecto base para cliente realizado en spring boot utilizando el motor de plantilla de thymeleaf.
+
+## Tecnologias
 
 - Spring 4.3
 - Java 17
@@ -34,7 +36,7 @@ https://mkyong.com/maven/maven-profiles-example/
 
 ## Modo de Instalar la aplicacion
 
-mvn clean install -P dev   (con -P indicamos el perfil)
+Basado en la siguiente fuente: https://mkyong.com/spring-boot/spring-boot-profile-based-properties-and-yaml-example/
 
 Lo ideal de entornos que se tendría que tener son:
 
@@ -46,4 +48,21 @@ Lo ideal de entornos que se tendría que tener son:
 - prod
 
 Esto se debe a que en cada properties se puede tener url diferentes y más si se apuntan a otros proyectos en el mismo
-ambiente. 
+ambiente.
+
+Se tienen dos opciones: 
+
+- Opción 1: Java System Properties (VM Arguments)
+Es importante que el parámetro -D antes de su aplicación de otra manera no sera reconocido. 
+- 
+
+    **java -jar -Dspring.profiles.active=prod application.jar**
+
+- Opción 2: Program arguments
+
+    **java -jar application.jar --spring.profiles.active=prod --spring.config.location=c:\config**
+- 
+La segunda opción es la que utilizo en el intellij. De esta manera tengo dos configuraciones para 
+hacer correr la aplicación. Una configuración para el profile de desarrollo y otra para el de producción. 
+
+Fuente: https://stackoverflow.com/questions/31038250/setting-active-profile-and-config-location-from-command-line-in-spring-boot

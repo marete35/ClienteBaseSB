@@ -1,0 +1,19 @@
+spring:
+  profiles: prod
+
+server:
+  port: 8081
+  url: http//midominio:8081
+
+email:
+  server:
+   email-dev: 8888
+
+# Log Files
+log:
+  file:
+    location: dev/file.log
+    level: DEBUG
+  env: dev
+
+
