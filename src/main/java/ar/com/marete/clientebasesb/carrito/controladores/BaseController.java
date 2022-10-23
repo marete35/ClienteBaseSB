@@ -59,7 +59,7 @@ public class BaseController {
         this.modelo.put("adicionalJs",linkJs);
     }
 
-    protected void isUserLogueado(){
-        log.info("Es base Controller");
+    protected boolean isUserLogueado(){
+        return true;
     }
 }

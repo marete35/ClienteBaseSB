@@ -13,11 +13,14 @@ public class ProductosController extends BaseController{
 
     @GetMapping("/misproductos")
     public ModelAndView list(Model model, @RequestParam(name = "q", required = false) String query) {
-        super.isUserLogueado();
-        super.agregarCSSExtra("test.css");
-        super.agregarJsExtra("componentTest.js");
-        super.cargarAssetsExtra();
-        return new ModelAndView("app/producto/lista",modelo);
+        if(super.isUserLogueado()) {
+            super.agregarCSSExtra("test.css");
+            super.agregarJsExtra("componentTest.js");
+            super.cargarAssetsExtra();
+            return new ModelAndView("app/producto/lista", modelo);
+        }else{
+            return new ModelAndView("app/login", modelo);
+        }
     }
 
 }
