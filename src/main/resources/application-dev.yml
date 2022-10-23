@@ -8,6 +8,14 @@ server:
   url: http://localhost:8081
   env: desarrollo
   urlApi: http://localhost:8080/
+  servlet:
+    session:
+      cookie:
+        name: MYSESSIONID
+
+
+
+
 
 email:
   server:
@@ -20,5 +28,12 @@ log:
     level: DEBUG
   env: dev
 
-
+logging:
+  level:
+    org.springframework: ERROR
+    ar.com.marete: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %X{sessionId} - %X{nombre} - %msg%n"
+    file: "%d %p %c{1.} [%t] %m%n"
+  file: app.log
 
