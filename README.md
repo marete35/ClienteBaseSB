@@ -65,3 +65,7 @@ La segunda opción es la que utilizo en el intellij. De esta manera tengo dos co
 hacer correr la aplicación. Una configuración para el profile de desarrollo y otra para el de producción. 
 
 Fuente: https://stackoverflow.com/questions/31038250/setting-active-profile-and-config-location-from-command-line-in-spring-boot
+
+## Logs
+
+https://mkyong.com/spring-boot/spring-boot-slf4j-logging-example/
