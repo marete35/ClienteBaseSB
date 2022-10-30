@@ -16,4 +16,7 @@
   <!-- Custom styles for this template -->
   <link href="sticky-footer-navbar.css" rel="stylesheet">
 
+  <!-- Cargamos los css particulares de dicha página -->
+  <link th:each="archivo : ${adicionalCSS}" th:href="@{|/css/${archivo}|}" rel="stylesheet">
+
 </head>

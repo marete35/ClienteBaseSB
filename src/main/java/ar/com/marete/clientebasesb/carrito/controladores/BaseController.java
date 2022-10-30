@@ -3,6 +3,7 @@ package ar.com.marete.clientebasesb.carrito.controladores;
 import ar.com.marete.clientebasesb.config.EnvProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -10,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
+@Controller
 public class BaseController {
 
     private ArrayList<String> archivosJs = new ArrayList<>();
@@ -34,7 +36,7 @@ public class BaseController {
      * @param archivo
      */
     protected void agregarJsExtra(String archivo){
-        if(this.archivosJs.contains(archivo)){
+        if(!this.archivosJs.contains(archivo)){
             archivo += "?v="+Calendar.getInstance().getTimeInMillis();
             this.archivosJs.add(archivo);
         }
@@ -44,19 +46,8 @@ public class BaseController {
      * Metodo para cargar los Assets particulares de cada pagina.
      */
     protected void cargarAssetsExtra(){
-        String linkCSS = "";
-        String linkJs = "";
-
-        for(String s: this.archivosCss){
-            linkCSS += "<link href=\"/"+envProperties.getUrlBase()+"/resources/css"+s+ "\" rel=\"stylesheet\" />\n";
-        }
-
-        for(String s:this.archivosJs) {
-            linkJs += "\n<script src=\"/"+envProperties.getUrlBase()+"/resources/js/" + s + "\"></script>\n";
-        }
-
-        this.modelo.put("adicionalCSS",linkCSS);
-        this.modelo.put("adicionalJs",linkJs);
+        this.modelo.put("adicionalCSS",this.archivosCss);
+        this.modelo.put("adicionalJs",this.archivosJs);
     }
 
     protected boolean isUserLogueado(){

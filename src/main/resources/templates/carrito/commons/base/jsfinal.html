@@ -2,7 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <th:block th:fragment="javascriptfinal">
+    <!-- Cargamos archivos js para todas las páginas -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" th:src="@{/webjars/jquery/jquery.min.js}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+    <!-- Cargamos archivos js particulares para la página -->
+    <script src="/static/js/componentTest.js" th:each="archivo : ${adicionalJs}" th:src="@{|/js/${archivo}|}"></script>
+
 </th:block>
+
