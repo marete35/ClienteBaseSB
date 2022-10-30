@@ -3,6 +3,7 @@ spring:
   thymeleaf:
     cache: false
 
+
 server:
   port: 8081
   url: http://localhost:8081
@@ -12,10 +13,6 @@ server:
     session:
       cookie:
         name: MYSESSIONID
-
-
-
-
 
 email:
   server:
