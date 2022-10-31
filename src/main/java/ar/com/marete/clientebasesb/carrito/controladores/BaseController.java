@@ -1,7 +1,6 @@
 package ar.com.marete.clientebasesb.carrito.controladores;
 
 import ar.com.marete.clientebasesb.config.EnvProperties;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -10,7 +9,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-@Slf4j
 @Controller
 public class BaseController {
 

@@ -1,6 +1,5 @@
 package ar.com.marete.clientebasesb.filters;
 
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -8,10 +7,8 @@ import org.springframework.stereotype.Component;
 import javax.servlet.*;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@Slf4j
 @Component
 @Order(1)
 public class MDCFilter implements Filter {
@@ -20,8 +17,8 @@ public class MDCFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpServletRequest = (HttpServletRequest)request;
         Cookie[] cookies = httpServletRequest.getCookies();
-        HttpServletRequest req = (HttpServletRequest) request;
-        HttpServletResponse res = (HttpServletResponse) response;
+        //HttpServletRequest req = (HttpServletRequest) request;
+        //HttpServletResponse res = (HttpServletResponse) response;
         //log.info("Logging Request  {} : {}", req.getMethod(),req.getRequestURI());
         if(cookies!=null) {
             //MDC.put("sessionId",this.getCookieValue(cookies, "JSESSIONID"));
