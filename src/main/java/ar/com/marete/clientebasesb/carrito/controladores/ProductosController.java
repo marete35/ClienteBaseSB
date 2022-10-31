@@ -17,7 +17,7 @@ public class ProductosController extends BaseController{
             super.agregarCSSExtra("test.css");
             super.agregarJsExtra("componentTest.js");
             super.cargarAssetsExtra();
-            return new ModelAndView("app/producto/lista", modelo);
+            return new ModelAndView("carrito/pages/producto/listado/lista", modelo);
         }else{
             return new ModelAndView("app/login", modelo);
         }

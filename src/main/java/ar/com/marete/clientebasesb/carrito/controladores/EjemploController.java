@@ -14,20 +14,20 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/test")
 public class EjemploController extends BaseController {
 
-        @GetMapping("/ejemplomain")
-        public ModelAndView list(@RequestParam(name = "q", required = false) String query) {
-            if(super.isUserLogueado()) {
-                //Cargo los css particulares para dicha página
-                super.agregarCSSExtra("styles.css");
-                //Cargo los js particulares para dicha página
-                super.agregarJsExtra("componentTest.js");
-                super.agregarJsExtra("componentTest1.js");
-                super.cargarAssetsExtra();
-                return new ModelAndView("carrito/pages/ejemplo/ejemploMain", modelo);
-            }else{
-                return new ModelAndView("app/login", modelo);
-            }
+    @GetMapping("/ejemplomain")
+    public ModelAndView list(@RequestParam(name = "q", required = false) String query) {
+        if (super.isUserLogueado()) {
+            //Cargo los css particulares para dicha página
+            super.agregarCSSExtra("styles.css");
+            //Cargo los js particulares para dicha página
+            super.agregarJsExtra("componentTest.js");
+            super.agregarJsExtra("componentTest1.js");
+            super.cargarAssetsExtra();
+            return new ModelAndView("carrito/pages/ejemplo/ejemploMain", modelo);
+        } else {
+            return new ModelAndView("app/login", modelo);
         }
+    }
 
 }
 
